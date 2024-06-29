@@ -19,10 +19,10 @@ cd models_zip
 7z x models.7z.001
 
 # Body
-mv $OPENPOSE_PATH/models_zip/models/pose/body_25/pose_iter_584000.caffemodel $OPENPOSE_PATH/models/pose/body_25/pose_iter_584000.caffemodel
+cp $OPENPOSE_PATH/models_zip/models/pose/body_25/pose_iter_584000.caffemodel $OPENPOSE_PATH/models/pose/body_25/pose_iter_584000.caffemodel
 
 # Face
-mv $OPENPOSE_PATH/models_zip/models/face/pose_iter_116000.caffemodel $OPENPOSE_PATH/models/face/pose_iter_116000.caffemodel
+cp $OPENPOSE_PATH/models_zip/models/face/pose_iter_116000.caffemodel $OPENPOSE_PATH/models/face/pose_iter_116000.caffemodel
 
 # Hand
-mv $OPENPOSE_PATH/models_zip/models/hand/pose_iter_102000.caffemodel $OPENPOSE_PATH/models/hand/pose_iter_102000.caffemodel
+cp $OPENPOSE_PATH/models_zip/models/hand/pose_iter_102000.caffemodel $OPENPOSE_PATH/models/hand/pose_iter_102000.caffemodel
