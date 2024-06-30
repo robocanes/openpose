@@ -9,20 +9,15 @@ rm -rf build
 mkdir build
 cd build
 
-# Here (from default options when clicking CONFIGURE):
-# ENABLE BUILD_PYTHON
-# DISABLE ALL DOWNLOAD MODEL OPTIONS
-# DISABLE USE_CUDNN
-# Click GENERATE
-cmake-gui ..
+# Use this if you need to change flag settings on run. For more permanent solution, edit CMakeLists.txt.
+# cmake-gui ..
+cmake ..
 make -j`nproc`
 sudo make install
 
-cd ..
-
 # This extracts the correct models (mirrors for OpenPose don't currently work).
-cd models_zip
-7z x models.7z.001
+cd $OPENPOSE_PATH/models_zip
+7z x models.7z.001 -aoa
 
 # Body
 cp $OPENPOSE_PATH/models_zip/models/pose/body_25/pose_iter_584000.caffemodel $OPENPOSE_PATH/models/pose/body_25/pose_iter_584000.caffemodel
@@ -32,3 +27,7 @@ cp $OPENPOSE_PATH/models_zip/models/face/pose_iter_116000.caffemodel $OPENPOSE_P
 
 # Hand
 cp $OPENPOSE_PATH/models_zip/models/hand/pose_iter_102000.caffemodel $OPENPOSE_PATH/models/hand/pose_iter_102000.caffemodel
+
+# Test binary
+cd $OPENPOSE_PATH
+./build/examples/openpose/openpose.bin --video examples/media/video.avi
