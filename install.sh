@@ -28,6 +28,8 @@ cp $OPENPOSE_PATH/models_zip/models/face/pose_iter_116000.caffemodel $OPENPOSE_P
 # Hand
 cp $OPENPOSE_PATH/models_zip/models/hand/pose_iter_102000.caffemodel $OPENPOSE_PATH/models/hand/pose_iter_102000.caffemodel
 
+rm -rf $OPENPOSE_PATH/models_zip/models
+
 # Test binary
 cd $OPENPOSE_PATH
 ./build/examples/openpose/openpose.bin --video examples/media/video.avi
