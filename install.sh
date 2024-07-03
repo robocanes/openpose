@@ -9,9 +9,7 @@ rm -rf build
 mkdir build
 cd build
 
-# Use this if you need to change flag settings on run. For more permanent solution, edit CMakeLists.txt.
-# cmake-gui ..
-cmake ..
+cmake-gui ..
 make -j`nproc`
 sudo make install
 
@@ -30,6 +28,7 @@ cp $OPENPOSE_PATH/models_zip/models/hand/pose_iter_102000.caffemodel $OPENPOSE_P
 
 rm -rf $OPENPOSE_PATH/models_zip/models
 
-# Test binary
 cd $OPENPOSE_PATH
-./build/examples/openpose/openpose.bin --video examples/media/video.avi
+
+# Test binary
+./test_openpose.sh
