@@ -1,7 +1,6 @@
 # This simple install script generates a build for OpenPose and establishes the models for further use.
 # Dependency install
 sudo apt install -y p7zip-full
-sudo apt install -y caffe-cpu
 ./scripts/ubuntu/install_deps.sh
 
 # Generate OpenPose Build
